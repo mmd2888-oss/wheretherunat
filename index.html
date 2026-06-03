@@ -398,6 +398,75 @@ footer{background:var(--dark);border-top:1px solid var(--line);}
   .chi-four-col{grid-template-columns:1fr 1fr !important;}
   .chi-form-row{grid-template-columns:1fr !important;}
 }
+
+.signup-two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border:1px solid var(--line);
+}
+.signup-left{
+  padding:48px 44px;
+  border-right:1px solid var(--line);
+}
+.signup-right{
+  padding:48px 44px;
+  background:var(--dark);
+}
+@media(max-width:760px){
+  .signup-two-col{
+    grid-template-columns:1fr !important;
+    display:flex !important;
+    flex-direction:column !important;
+  }
+  .signup-left{
+    padding:32px 18px;
+    border-right:none;
+    border-bottom:1px solid var(--line);
+  }
+  .signup-right{
+    padding:32px 18px;
+  }
+}
+
+.newsletter-form{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0;
+}
+.newsletter-form input{
+  flex:1;
+  min-width:160px;
+  padding:13px 16px;
+  background:rgba(237,239,237,0.04);
+  border:1px solid var(--line);
+  color:var(--white);
+  font-family:'Barlow',sans-serif;
+  font-size:15px;
+  outline:none;
+}
+.newsletter-form button{
+  padding:13px 24px;
+  background:var(--teal);
+  border:none;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--black);
+  cursor:pointer;
+  white-space:nowrap;
+}
+@media(max-width:600px){
+  .newsletter-form{flex-direction:column;}
+  .newsletter-form input,
+  .newsletter-form button{
+    width:100%;
+    font-size:16px;
+    border-right:1px solid var(--line);
+  }
+  .newsletter-form input{border-bottom:none;}
+}
 </style>
 </head>
 <body>
@@ -709,10 +778,10 @@ footer{background:var(--dark);border-top:1px solid var(--line);}
  <div class="s-head">Get In The Game</div>
  <p class="s-body">Drop your info and tell us what you are interested in. We will reach out with details, schedules, and next steps.</p>
 
- <div style="display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);">
+ <div class="signup-two-col">
 
  <!-- LEFT — FORM -->
- <div style="padding:48px 44px;border-right:1px solid var(--line);">
+ <div class="signup-left">
  <form name="wtra-interest" method="POST" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
  <input type="hidden" name="form-name" value="wtra-interest">
  <p style="display:none"><input name="bot-field"></p>
